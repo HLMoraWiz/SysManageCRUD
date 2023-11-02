@@ -1,7 +1,11 @@
+using SysManageCRUD.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IPatientRepository, PatientRepository>(); 
 
 var app = builder.Build();
 
