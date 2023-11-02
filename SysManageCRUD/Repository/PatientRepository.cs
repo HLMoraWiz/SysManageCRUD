@@ -14,7 +14,18 @@ namespace SysManageCRUD.Repository
         }
         public Patient CreatePatient(Patient patient)
         {
-            throw new NotImplementedException();
+            var sql = "INSERT INTO Patient(Name,LastName,Age,Description)" +
+                "Values(@Name,@LastName,@Age,@Description)";
+            _bd.Execute(sql, new
+            {
+                patient.Name,
+                patient.LastName,
+                patient.Age,
+                patient.Description
+            
+            });
+
+            return patient; 
         }
 
         public void DeletePatient(int id)
