@@ -17,9 +17,10 @@ namespace SysManageCRUD.Repository
             throw new NotImplementedException();
         }
 
-        public Patient DeletePatient(int id)
+        public void DeletePatient(int id)
         {
-            throw new NotImplementedException();
+            var sql = "DELETE * FROM Patient where IdPatient=@IdPatient";
+            _bd.Execute(sql, new { idPatient = id }); 
         }
 
         public Patient GetPatient(int id)
