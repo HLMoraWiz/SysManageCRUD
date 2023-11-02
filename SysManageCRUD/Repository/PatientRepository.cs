@@ -24,7 +24,8 @@ namespace SysManageCRUD.Repository
 
         public Patient GetPatient(int id)
         {
-            throw new NotImplementedException();
+            var sql = "SELECT * FROM Patient where IdPatient=@IdPatient"; 
+            return _bd.Query<Patient>(sql, new { IdPatient = id }).Single();
         }
 
         public List<Patient> GetPatients()
