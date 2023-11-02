@@ -37,7 +37,9 @@ namespace SysManageCRUD.Repository
 
         public Patient UpdatePatient(Patient patient)
         {
-            throw new NotImplementedException();
+            var sql = "UPDATE Patient SET Name = @Name, LastName=@LastName,Age=@Age,@Descripcion=Descripcion";
+            _bd.Execute(sql, patient);
+            return patient; 
         }
     }
 }

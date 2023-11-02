@@ -12,6 +12,6 @@ namespace SysManageCRUD.Repository
 
         Patient UpdatePatient(Patient patient);
 
-        Patient DeletePatient(int id);
+        void DeletePatient(int id);
     }
 }
