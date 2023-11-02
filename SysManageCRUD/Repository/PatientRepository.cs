@@ -1,4 +1,5 @@
-﻿using SysManageCRUD.Models;
+﻿using Dapper;
+using SysManageCRUD.Models;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -28,7 +29,8 @@ namespace SysManageCRUD.Repository
 
         public List<Patient> GetPatients()
         {
-            throw new NotImplementedException();
+            var sql = "SELECT * FROM Patient"; 
+            return _bd­.Query<Patient>(sql).ToList();    
         }
 
         public Patient UpdatePatient(Patient patient)
