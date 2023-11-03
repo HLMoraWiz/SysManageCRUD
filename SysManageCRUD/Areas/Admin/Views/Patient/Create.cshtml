@@ -1,4 +1,56 @@
 ﻿@model SysManageCRUD.Models.Patient; 
 
+@{
+    ViewData["Title"] = "Create Patient"; 
+}
+<div class="row justify-content-center">
+    <div class="col-md-8 mb-4">
+        <div class="card mb-4">
+            <div class="card-header py-3">
+                <h5 class="mb-0">Create Patient</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input asp-for="Name" class="form-control" />
+                                <label asp-for="Name" class="form-label"></label>
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input asp-for="LastName" class="form-control" />
+                                <label asp-for="LastName" class="form-label"></label>
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="form-outline mb-4">
+                        <input asp-for="Age" class="form-control" />
+                        <label asp-for="Age" class="form-label"></label>
+                        <span asp-validation-for="Age" class="text-danger"></span>
+                    </div>
 
+                    <div class="form-outline mb-4">
+                        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                        <label asp-for="Description" class="form-label"></label>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form btn-group row mt-4">
+                        <div class="col-6">
+                            <input class="btn btn-primary form-control" type="submit" value="Create" />
+                        </div>
+                        <div class="col-6">
+                            <a asp-action="Index" class="btn btn-warning form-control">Back</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
