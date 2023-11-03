@@ -6,7 +6,7 @@ $(document).ready(function () {
 function cargarDatatable() {
     datatable = $("#tblPatients").DataTable({
         "ajax": {
-            "url": "/admin/patient/GetPatients",
+            "url": "/admin/Patient/GetPatients",
             "type": "GET",
             "datatype": "json"
         },

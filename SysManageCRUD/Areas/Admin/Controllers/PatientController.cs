@@ -23,8 +23,14 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             return Json(new {data = _repoPatient.GetPatients()});
         }
         #endregion
-    
-         
+
+
+      
+        public IActionResult Create()
+        {
+
+           return View();    
+        }
     
     
     }
