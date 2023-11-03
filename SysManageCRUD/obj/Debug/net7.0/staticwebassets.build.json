@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UCAuw41OA9lVzt2We+pjRVSQg3uVUKdPMjajfJAnGw4=",
+  "Hash": "uxC88HBb3HA9FsoAdjwos+k5HK5cfpSMjOJomNGrGeI=",
   "Source": "SysManageCRUD",
   "BasePath": "_content/SysManageCRUD",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\js\\Patients.js",
+      "SourceId": "SysManageCRUD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\",
+      "BasePath": "_content/SysManageCRUD",
+      "RelativePath": "js/Patients.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Patients.js"
     },
     {
       "Identity": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\js\\site.js",
