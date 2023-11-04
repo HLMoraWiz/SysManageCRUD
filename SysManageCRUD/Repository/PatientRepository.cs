@@ -14,15 +14,14 @@ namespace SysManageCRUD.Repository
         }
         public Patient CreatePatient(Patient patient)
         {
-            var sql = "INSERT INTO Patient(Name,LastName,Age,Description)" +
-                "Values(@Name,@LastName,@Age,@Description)";
+            var sql = "INSERT INTO Patient(Name,LastName,Age,Description)Values(@Name,@LastName,@Age,@Description)";
             _bd.Execute(sql, new
             {
                 patient.Name,
                 patient.LastName,
                 patient.Age,
                 patient.Description
-            
+
             });
 
             return patient; 

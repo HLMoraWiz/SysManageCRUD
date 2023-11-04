@@ -43,7 +43,7 @@
 
                     <div class="form btn-group row mt-4">
                         <div class="col-6">
-                            <input class="btn btn-primary form-control" type="submit" value="Create" />
+                            <input class="btn btn-primary form-control" type="submit" value="Create P" />
                         </div>
                         <div class="col-6">
                             <a asp-action="Index" class="btn btn-warning form-control">Back</a>
@@ -54,3 +54,8 @@
         </div>
     </div>
 </div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

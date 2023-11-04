@@ -11,13 +11,13 @@ function cargarDatatable() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "idPatient", "width": "5%" },
-            { "data": "Name", "width": "40%" },
-            { "data": "LastName", "width": "20%" },
-            { "data": "Age", "width": "20%" },
-            { "data": "Description", "width": "20%" },
+            { "data": "idPatient","width": "50px" },
+            { "data": "name", "width": "150px" },
+            { "data": "lastName", "width": "100px" },
+            { "data": "age", "width": "50px" },
+            { "data": "description", "width": "200px" },
             {
-                "data": "idPatient",
+                "data": "IdPatient",
                 "render": function (data) {
                     return `
                       <div class="text-center">
