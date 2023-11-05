@@ -86,5 +86,24 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             return View(patient);
         }
 
+
+        [HttpDelete]
+
+        public IActionResult Delete(int? id) {
+
+            if (id==null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _repoPatient.DeletePatient(id.GetValueOrDefault());
+                return Json(new {success = true, message= "Patient has been deleted correctly" });
+            }
+
+        
+        }
+
+
     }
 }

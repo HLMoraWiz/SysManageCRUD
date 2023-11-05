@@ -29,7 +29,7 @@ namespace SysManageCRUD.Repository
 
         public void DeletePatient(int id)
         {
-            var sql = "DELETE * FROM Patient where IdPatient=@IdPatient";
+            var sql = "DELETE FROM Patient where IdPatient=@IdPatient";
             _bd.Execute(sql, new { idPatient = id }); 
         }
 
