@@ -51,10 +51,21 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
         [HttpGet]
 
-        public IActionResult Edit()
+        public IActionResult Edit(int?id)
         {
 
-            return View();  
+            if (id==null)
+            {
+                return NotFound();
+            }
+           
+              var patient =   _repoPatient.GetPatient(id.GetValueOrDefault());
+            if (patient==null)
+            {
+                return NotFound();
+            }
+
+            return View(patient);  
         }
 
     }
