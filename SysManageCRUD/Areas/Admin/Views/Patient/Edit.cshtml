@@ -1,3 +1,45 @@
 ﻿@model SysManageCRUD.Models.Patient
+@{
+    ViewData["Title"] = "Edit Patient"; 
+}
 
+<div class="container my-5">
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="Edit"  class="row g-3">
+                <input type="hidden" asp-for="IdPatient">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col-md-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" type="text" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="LastName" class="form-label"></label>
+                    <input asp-for="LastName" type="text" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="col-md-3">
+                    <label asp-for="Age" class="form-label"></label>
+                    <input asp-for="Age" type="text" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
 
+                <div class="col-md-8">
+                    <label asp-for="Description" class="form-label"></label>
+                    <textarea asp-for="Description"  class="form-control" rows="10" cols="125"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form btn-group row mt-4">
+                <div class="col-3">
+                    <input type="submit" value="Edit Patient" class="btn btn-primary form-control"/>
+                </div>
+
+                <div class="col-4">
+                    <a asp-action="Index" class="btn btn-warning form-control">Back to List</a>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
