@@ -47,7 +47,7 @@ namespace SysManageCRUD.Repository
 
         public Patient UpdatePatient(Patient patient)
         {
-            var sql = "UPDATE Patient SET Name = @Name, LastName=@LastName,Age=@Age,@Descripcion=Descripcion";
+            var sql = "UPDATE Patient SET Name = @Name, LastName=@LastName,Age=@Age,Description=@Description Where IdPatient=@IdPatient";
             _bd.Execute(sql, patient);
             return patient; 
         }

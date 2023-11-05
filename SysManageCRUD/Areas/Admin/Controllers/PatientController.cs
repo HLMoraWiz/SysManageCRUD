@@ -70,7 +70,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
         [HttpPost]
 
-        public IActionResult Edit([Bind("IdPatient,Name,LastName,Age,Descripcion")]Patient patient, int id)
+        public IActionResult Edit([Bind("IdPatient,Name,LastName,Age,Description")]Patient patient, int id)
         {
             if (id!= patient.IdPatient)
             {

@@ -18,7 +18,7 @@ function cargarDatatable() {
             { "data": "age", "width": "20%" },
             { "data": "description", "width": "20%" },
             {
-                "data": "IdPatient",
+                "data": "idPatient",
                 "render": function (data) {
                     return `
                       <div class="text-center">

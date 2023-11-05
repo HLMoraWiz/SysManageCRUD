@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-body">
             <form asp-action="Edit"  class="row g-3">
-                <input type="hidden" asp-for="IdPatient">
+                <input type="hidden" asp-for="IdPatient"/>
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="col-md-3">
                     <label asp-for="Name" class="form-label"></label>
@@ -43,3 +43,4 @@
         </div>
     </div>
 </div>
+
