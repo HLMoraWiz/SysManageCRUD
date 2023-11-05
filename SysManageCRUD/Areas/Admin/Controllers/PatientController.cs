@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Humanizer.Localisation.TimeToClockNotation;
+using Microsoft.AspNetCore.Mvc;
 using SysManageCRUD.Models;
 using SysManageCRUD.Repository;
 
@@ -53,19 +54,36 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
         public IActionResult Edit(int?id)
         {
-
             if (id==null)
             {
                 return NotFound();
             }
            
-              var patient =   _repoPatient.GetPatient(id.GetValueOrDefault());
+            var patient =   _repoPatient.GetPatient(id.GetValueOrDefault());
             if (patient==null)
             {
                 return NotFound();
             }
 
             return View(patient);  
+        }
+
+        [HttpPost]
+
+        public IActionResult Edit([Bind("IdPatient,Name,LastName,Age,Descripcion")]Patient patient, int id)
+        {
+            if (id!= patient.IdPatient)
+            {
+                return NotFound(); 
+            }
+
+            if (ModelState.IsValid) { 
+            
+              _repoPatient.UpdatePatient(patient);
+              return RedirectToAction(nameof(Index));
+            }
+
+            return View(patient);
         }
 
     }
