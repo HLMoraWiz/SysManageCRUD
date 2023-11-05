@@ -48,5 +48,14 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             return View(patient);
         }
 
+
+        [HttpGet]
+
+        public IActionResult Edit()
+        {
+
+            return View();  
+        }
+
     }
 }
