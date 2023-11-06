@@ -2,7 +2,7 @@
 
 namespace SysManageCRUD.Repository
 {
-    public interface ISpecialty
+    public interface ISpecialtyRepository
     {
         Specialty GetSpecialty(int id);
         List<Specialty> GetSpecialtyList();
