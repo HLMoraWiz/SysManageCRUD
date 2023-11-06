@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IPatientRepository, PatientRepository>(); 
+builder.Services.AddScoped<ISpecialtyRepository, SpecialtyRepository>(); 
 
 var app = builder.Build();
 
