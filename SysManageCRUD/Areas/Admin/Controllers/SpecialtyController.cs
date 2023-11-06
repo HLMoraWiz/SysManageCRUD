@@ -12,6 +12,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
                 _repoSpecialty = repoSpecialty;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
@@ -24,5 +25,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         }
 
         #endregion
+
+
     }
 }
