@@ -16,5 +16,13 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         {
             return View();
         }
+
+        #region
+        public ActionResult GetSpecialtys()
+        {
+            return Json(new {data = _repoSpecialty.GetSpecialtyList()});
+        }
+
+        #endregion
     }
 }
