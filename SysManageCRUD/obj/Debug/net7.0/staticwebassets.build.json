@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uxC88HBb3HA9FsoAdjwos+k5HK5cfpSMjOJomNGrGeI=",
+  "Hash": "V5J9s9Nn+XkfLE7HXqviaAqDoyfcla0gGPQQyz4PU04=",
   "Source": "SysManageCRUD",
   "BasePath": "_content/SysManageCRUD",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\js\\Specialtys.js",
+      "SourceId": "SysManageCRUD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\",
+      "BasePath": "_content/SysManageCRUD",
+      "RelativePath": "js/Specialtys.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Specialtys.js"
     },
     {
       "Identity": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<SysManageCRUD.Models.Specialty>
+
+
 @{
+    ViewData["Title"] = "Specialty List";
+}
+<div class="row">
+    <div class="col-9">
+        <h1>Specialty management</h1>
+    </div>
+    <div class="col-3">
+        <a asp-action="Create" class="btn btn-primary float-end"><i class="bi bi-plus-square"></i>Add Specialty</a>
+    </div>
+</div>
+<div class="card bg-light p-3">
+    <table class="table" id="tblSpecialtys">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Specialty Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts{
+    <script src="~/js/Specialtys.js"></script>
+
 }

@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\js\\Patients.js"
     },
     {
+      "Id": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\js\\Specialtys.js",
+      "PackagePath": "staticwebassets\\js\\Specialtys.js"
+    },
+    {
       "Id": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
