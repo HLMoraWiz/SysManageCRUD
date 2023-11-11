@@ -1,0 +1,34 @@
+﻿@model SysManageCRUD.Models.Specialty
+@{
+    ViewData["Title"] = "Create Specialty";
+}
+<h1>Crear Specialty</h1>
+
+<hr />
+
+<div class="row bg-light border p-4">
+    <div class="col-4 offset-4"></div>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="SpecialtyName" class="control-label"></label>
+            <input asp-for="SpecialtyName" class="form-control" placeholder="Enter the name of the Specialty" />
+            <span asp-validation-for="SpecialtyName" class="text-danger"></span>
+        </div>
+        <div class="form btn-group row mt-4">
+            <div class="col-6">
+                <input type="submit" value="Create Specialty" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-6">
+                <a asp-action="Index" class="btn btn-warning form-control">Back to list</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

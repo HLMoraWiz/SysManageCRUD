@@ -28,5 +28,13 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         #endregion
 
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
+
     }
 }
