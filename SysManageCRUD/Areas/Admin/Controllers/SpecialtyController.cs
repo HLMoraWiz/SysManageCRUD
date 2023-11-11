@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SysManageCRUD.Models;
 using SysManageCRUD.Repository;
 
 namespace SysManageCRUD.Areas.Admin.Controllers
@@ -33,6 +34,19 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create([Bind("IdSpecialty,SpecialtyName")] Specialty specialty) {
+
+            if (ModelState.IsValid)
+            {
+                _repoSpecialty.CreateSpecialty(specialty);
+                return RedirectToAction("Index");
+            }
+         
+            return View(specialty);
+        }
+
 
 
 

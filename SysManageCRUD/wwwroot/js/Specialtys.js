@@ -19,13 +19,13 @@ function cargarDatatable() {
                 "render": function (data) {
                     return `
                       <div class="text-center">
-                        <a href="/admin/specialty/edit/${data}" class="btn btn-success text-white" style="cursor:pointer; width:100%">
+                      <a href="/admin/specialty/edit/${data}" class="btn btn-success  text-white" style="cursor:pointer; width:100px"">
                          <i class="bi bi-pencil-square"></i> Edit
                         </a>
                         &nbsp;
-                        <a onclick=Delete("/admin/specialty/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100%">
-                         <i class="bi bi-x-square"></i> Delete
-                        </a>
+                         <a onclick=Delete("/admin/specialty/Delete/${data}") class="btn btn-danger  text-white" style="cursor:pointer; width:100px"">
+                          <i class="bi bi-x-square"></i> Delete
+                         </a>
                       </div>`;
                 }
             }
