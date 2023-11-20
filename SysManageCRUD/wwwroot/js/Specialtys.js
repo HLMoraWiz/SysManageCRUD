@@ -12,8 +12,8 @@ function cargarDatatable() {
         },
         "responsive": true,
         "columns": [
-            { "data": "idSpecialty","width": "5%" },
-            { "data": "specialtyName", "width": "20%" },
+            { "data": "idSpecialty","width": "10%" },
+            { "data": "specialtyName", "width": "15%" },
             {
                 "data": "idSpecialty",
                 "render": function (data) {

@@ -32,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3BlY2lhbHR5XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Blitz/source/repos/SysManageCRUD/SysManageCRUD/Areas/Admin/Views/Specialty/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3BlY2lhbHR5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Blitz/source/repos/SysManageCRUD/SysManageCRUD/Areas/Admin/Views/Specialty/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3BlY2lhbHR5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

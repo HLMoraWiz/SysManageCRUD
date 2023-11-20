@@ -47,8 +47,53 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             return View(specialty);
         }
 
+        [HttpGet]
+        public IActionResult Edit(int?id) {
 
+            if (id==null)
+            {
+               return NotFound(); 
+            }
+           var specialty = _repoSpecialty.GetSpecialty(id.GetValueOrDefault());
+            if (specialty==null)
+            {
+                return NotFound(); 
+            }
+            return View(specialty);
+        }
 
+        [HttpPost]
+        public IActionResult Edit([Bind("IdSpecialty,SpecialtyName")] Specialty specialty, int id)
+        {
+
+            if (id!=specialty.IdSpecialty)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _repoSpecialty.UpdateSpecialty(specialty);
+                return RedirectToAction("Index");
+            }
+
+            return View(specialty);
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int? id)
+        {
+            if (id==null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _repoSpecialty.DeleteSpecialty(id.GetValueOrDefault());
+                return Json(new { success = true, message = "Specialty has been deleted correctly" });
+            }
+
+        }
 
     }
 }
