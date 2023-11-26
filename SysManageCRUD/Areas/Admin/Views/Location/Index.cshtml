@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SysManageCRUD.Models.Location>
+@{
+    ViewData["Title"] = "Location List";
+}
+<div class="row">
+    <div class="col-9">
+        <h1>Location management</h1>
+    </div>
+    <div class="col-3">
+        <a asp-action="Create" class="btn btn-primary float-end"><i class="bi bi-plus-square"></i>Add Location</a>
+    </div>
+</div>
+<div class="card bg-light p-3">
+    <table class="table" id="tblLocations">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Location Name</th>
+                <th>Address</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts{
+    <script src="~/js/locations.js"></script>
+}

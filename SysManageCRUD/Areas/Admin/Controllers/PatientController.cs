@@ -14,6 +14,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         {
             _repoPatient = patientRepository;       
         }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -26,8 +27,6 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             return Json(new {data = _repoPatient.GetPatients()});
         }
         #endregion
-
-
         [HttpGet]
         public IActionResult Create()
         {

@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IPatientRepository, PatientRepository>(); 
 builder.Services.AddScoped<ISpecialtyRepository, SpecialtyRepository>(); 
+builder.Services.AddScoped<ILocationRepository, LocationRepository>(); 
 
 var app = builder.Build();
 
