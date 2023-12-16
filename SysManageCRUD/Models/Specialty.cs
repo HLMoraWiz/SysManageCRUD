@@ -11,5 +11,6 @@ namespace SysManageCRUD.Models
         public string SpecialtyName { get; set; }
         public List<Doctor> Doctor { get; set;}
 
+
     }
 }

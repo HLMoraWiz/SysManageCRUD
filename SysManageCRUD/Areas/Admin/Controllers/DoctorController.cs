@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SysManageCRUD.Models;
 using SysManageCRUD.Repository;
 
 namespace SysManageCRUD.Areas.Admin.Controllers
@@ -7,10 +8,12 @@ namespace SysManageCRUD.Areas.Admin.Controllers
     public class DoctorController : Controller
     {
         private readonly IDoctorRepository _RepoDoctor;
+        private readonly ISpecialtyRepository _RepoSpecialty;
 
-        public DoctorController(IDoctorRepository doctorRepository)
+        public DoctorController(IDoctorRepository doctorRepository,ISpecialtyRepository specialtyRepository)
         {
                 _RepoDoctor = doctorRepository;
+                _RepoSpecialty = specialtyRepository;
         }
 
         [HttpGet]
@@ -25,6 +28,28 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             return Json(new { data = _RepoDoctor.GetSpecialtyDoctor()});
         }
         #endregion
-
+        [HttpGet]
+        public IActionResult Create() {
+            ViewBag.SelectList = _RepoSpecialty.GetSelectListSpecialty();
+            return View();
+          
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+       public ActionResult Create([Bind("IdDoctor","Name","IdSpecialty")]Doctor doctor)
+        {
+            if (!ModelState.IsValid)
+            {
+                if (doctor.IdDoctor==0)
+                {
+                    _RepoDoctor.CreateDoctor(doctor);
+                    return RedirectToAction(nameof(Index));
+                }
+              
+            }
+            ViewBag.SelectList = _RepoSpecialty.GetSelectListSpecialty();
+            return View(doctor);
+        }
+        
     }
 }

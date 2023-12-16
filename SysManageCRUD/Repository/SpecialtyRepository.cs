@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis;
 using SysManageCRUD.Models;
 using System.Data;
@@ -47,6 +48,16 @@ namespace SysManageCRUD.Repository
             var sql = "UPDATE Specialty SET SpecialtyName = @SpecialtyName  Where IdSpecialty=@IdSpecialty";
             _bd.Execute(sql, specialty);
             return specialty; 
+        }
+
+        //new.
+        public IEnumerable<SelectListItem> GetSelectListSpecialty()
+        {
+            var sql = "SELECT * FROM specialty";
+            var lista = _bd.Query<Specialty>(sql).ToList();
+            SelectList listSpecialty = new SelectList(lista, "IdSpecialty", "SpecialtyName");
+
+            return listSpecialty;
         }
     }
 }

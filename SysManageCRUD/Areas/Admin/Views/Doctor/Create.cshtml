@@ -1,0 +1,40 @@
+﻿@model SysManageCRUD.Models.Doctor
+@{
+    ViewData["Title"] = "Create Doctor"; 
+}
+<h1>Create Doctor</h1>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8 mb-4">
+        <div class="card mb-4">
+            <div class="card-header py-3">
+                <h5 class="mb-0">Create Doctor</h5>
+            </div>
+            <div class="card-body">
+          <form asp-action="Create">
+          <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          <div class="form-group">
+              <label asp-for="Name" class="control-label"></label>
+              <input asp-for="Name" class="form-control" placeholder="Type the name of the doctor"/>
+              <span asp-validation-for="Name" class="text-danger"></span>
+          </div>
+
+           <div class="form-group mt-3">
+           @Html.DropDownList("IdSpecialty", (SelectList)ViewBag.SelectList, 
+           "-Select a specialty-", htmlAttributes: new { @class = "form-control" })            
+           <span asp-validation-for="IdSpecialty" class="text-danger"></span>
+           </div>
+                    <div class="form btn-group row mt-4">
+                        <div class="col-6">
+                            <input type="submit" value="Create Doctor" class="btn btn-primary form-control"/>
+                        </div>
+
+                        <div class="col-6">
+                            <a asp-action="Index" class="btn btn-warning form-control">Back</a>
+                        </div>
+                    </div>
+          </form>
+          </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,5 @@
-﻿using SysManageCRUD.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SysManageCRUD.Models;
 
 namespace SysManageCRUD.Repository
 {
@@ -9,6 +10,9 @@ namespace SysManageCRUD.Repository
         Specialty UpdateSpecialty(Specialty specialty);
         void DeleteSpecialty(int id);
         Specialty CreateSpecialty(Specialty specialty);
+
+        //..
+        IEnumerable<SelectListItem> GetSelectListSpecialty();
 
     }
 }

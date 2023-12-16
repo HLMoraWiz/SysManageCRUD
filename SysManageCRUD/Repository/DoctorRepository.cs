@@ -17,7 +17,7 @@ namespace SysManageCRUD.Repository
         public Doctor CreateDoctor(Doctor doctor)
         {
             var sql = "INSERT INTO doctor(Name,IdSpecialty)" +
-                "VALUES(@Name,@IdSpeacialty)";
+                "VALUES(@Name,@IdSpecialty)";
 
             _bd.Execute(sql, new
             {
