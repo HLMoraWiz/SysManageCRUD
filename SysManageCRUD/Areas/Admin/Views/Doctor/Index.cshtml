@@ -1,0 +1,29 @@
+﻿@model IEnumerable<SysManageCRUD.Models.Doctor>
+
+    @{
+        ViewData["Title"] = "Doctor List";
+    }
+
+<div class="row">
+    <div class="col-9">
+        <h1>Doctor Management</h1>
+    </div>
+    <div class="col-3">
+        <a asp-action="Create" class="btn btn-primary float-end"><i class="bi bi-plus-square"></i>Add Doctor</a>
+    </div>
+</div>
+<div class="card bg-light p-3">
+    <table class="table" id="tblDoctors">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>DoctorName</th>
+                <th>SpecialtyName</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+@section scripts{
+   <script src="~/js/doctors.js"></script>
+}
