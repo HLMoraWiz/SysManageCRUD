@@ -1,0 +1,35 @@
+﻿@model SysManageCRUD.Models.Doctor
+@{
+    ViewData["Title"] = "Edit Doctor";
+}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="Edit" class="row g-3">
+                <input type="hidden" asp-for="IdDoctor" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col-md-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" type="text" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-3">
+                    @Html.DropDownList("IdSpecialty", (SelectList)ViewBag.SelectList,
+                    "-Select a specialty-", htmlAttributes: new { @class = "form-control" })
+                    <span asp-validation-for="IdSpecialty" class="text-danger"></span>
+                </div>
+       
+                <div class="form btn-group row mt-4">
+                    <div class="col-3">
+                        <input type="submit" value="Edit Patient" class="btn btn-primary form-control" />
+                    </div>
+
+                    <div class="col-4">
+                        <a asp-action="Index" class="btn btn-warning form-control">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

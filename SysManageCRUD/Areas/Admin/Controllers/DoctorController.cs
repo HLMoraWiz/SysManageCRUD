@@ -49,6 +49,24 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             }
             ViewBag.SelectList = _RepoSpecialty.GetSelectListSpecialty();
             return View(doctor);
+       }
+
+
+
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            if (id==null)
+            {
+                return NotFound();
+            }
+            var doctor = _RepoDoctor.GetDoctor(id.GetValueOrDefault());
+            if (doctor ==null)
+            {
+                return NotFound(); 
+            }
+            ViewBag.SelectList = _RepoSpecialty.GetSelectListSpecialty();
+            return View(doctor);
         }
         
     }

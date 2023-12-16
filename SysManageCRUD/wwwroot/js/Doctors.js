@@ -20,11 +20,11 @@ function cargarDatatable() {
                 "data": "idDoctor",
                 "render": function (data) {
                     return `<div class="text-center">
-                        <a href="/admin/doctors/edit/${data}" class="btn btn-success text-white" style="cursor:pointer; width:100px">
+                        <a href="/admin/doctor/edit/${data}" class="btn btn-success text-white" style="cursor:pointer; width:100px">
                          <i class="bi bi-pencil-square"></i> Edit
                         </a>
                         &nbsp;
-                        <a onclick=Delete("/admin/doctors/DeleteDoctor/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100px">
+                        <a onclick=Delete("/admin/doctor/DeleteDoctor/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100px">
                          <i class="bi bi-x-square"></i> Borrar
                         </a>
                       </div>
