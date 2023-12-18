@@ -24,8 +24,8 @@ function cargarDatatable() {
                          <i class="bi bi-pencil-square"></i> Edit
                         </a>
                         &nbsp;
-                        <a onclick=Delete("/admin/doctor/DeleteDoctor/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100px">
-                         <i class="bi bi-x-square"></i> Borrar
+                        <a onclick=Delete("/admin/doctor/delete/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100px">
+                         <i class="bi bi-x-square"></i> Delete
                         </a>
                       </div>
                       `;
@@ -36,12 +36,12 @@ function cargarDatatable() {
 }
 function Delete(url) {
     Swal.fire({
-        title: '¿Está seguro de borrar?',
-        text: 'Este contenido no se puede borrar.',
+        title: '¿Are you sure to delete this information?',
+        text: 'This content cannot delete.',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Sí, borrarlo'
+        confirmButtonText: 'Yes, Delete it'
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
@@ -59,7 +59,6 @@ function Delete(url) {
         }
     });
 }
-
 
 
 

@@ -16,13 +16,13 @@ namespace SysManageCRUD.Repository
 
         public Doctor CreateDoctor(Doctor doctor)
         {
-            var sql = "INSERT INTO doctor(Name,IdSpecialty)" +
-                "VALUES(@Name,@IdSpecialty)";
+            var sql = "INSERT INTO doctor(Name,SpecialtyId)" +
+                "VALUES(@Name,@SpecialtyId)";
 
             _bd.Execute(sql, new
             {
                 doctor.Name,
-                doctor.IdSpecialty
+                doctor.SpecialtyId
             }); 
 
             return doctor;
@@ -49,20 +49,20 @@ namespace SysManageCRUD.Repository
         public List<Doctor> GetSpecialtyDoctor()
         {
             var sql = "SELECT a.*, c.SpecialtyName FROM Doctor a INNER JOIN Specialty c " +
-          "ON a.IdSpecialty=c.IdSpecialty ORDER BY IdDoctor DESC";
+          "ON a.SpecialtyId=c.IdSpecialty ORDER BY IdDoctor DESC";
 
             var doctor = _bd.Query<Doctor, Specialty, Doctor>(sql, (a, c) =>
             {
                 a.Specialty = c;
                 return a;
-            }, splitOn: "IdSpecialty");
+            }, splitOn: "SpecialtyId");
 
             return doctor.Distinct().ToList();
         }
 
         public Doctor UpdateDoctor(Doctor doctor)
         {
-            var sql = "UPDATE Doctor SET Name=@Name,  IdSpecialty=@IdSpecialty Where IdDoctor=@IdDoctor";
+            var sql = "UPDATE Doctor SET Name=@Name,SpecialtyId=@SpecialtyId Where IdDoctor=@IdDoctor";
             _bd.Execute(sql, doctor);
             return doctor;
         }

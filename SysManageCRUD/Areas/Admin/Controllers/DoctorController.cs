@@ -25,7 +25,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult GetDoctors()
         {
-            return Json(new { data = _RepoDoctor.GetSpecialtyDoctor()});
+            return Json(new { data = _RepoDoctor.GetSpecialtyDoctor()});///malo
         }
         #endregion
         [HttpGet]
@@ -36,22 +36,21 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-       public ActionResult Create([Bind("IdDoctor","Name","IdSpecialty")]Doctor doctor)
+       public ActionResult Create([Bind("IdDoctor","Name", "SpecialtyId")]Doctor doctor)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 if (doctor.IdDoctor==0)
                 {
                     _RepoDoctor.CreateDoctor(doctor);
                     return RedirectToAction(nameof(Index));
                 }
-              
+
+                return RedirectToAction(nameof(Create));
             }
-            ViewBag.SelectList = _RepoSpecialty.GetSelectListSpecialty();
+           
             return View(doctor);
        }
-
-
 
         [HttpGet]
         public IActionResult Edit(int? id)
@@ -68,6 +67,39 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             ViewBag.SelectList = _RepoSpecialty.GetSelectListSpecialty();
             return View(doctor);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit([Bind("IdDoctor","Name", "SpecialtyId")] Doctor doctor, int id)
+        {
+            if (id!=doctor.IdDoctor)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                _RepoDoctor.UpdateDoctor(doctor);
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Edit));
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int? id) {
+
+            if (id==null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _RepoDoctor.DeleteDoctor(id.GetValueOrDefault());
+                return Json(new {success = true,message="Doctor deleted correctly" });
+
+            }
         
+        
+        }
+
     }
 }
