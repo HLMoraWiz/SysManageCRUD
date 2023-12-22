@@ -1,4 +1,5 @@
-﻿using SysManageCRUD.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SysManageCRUD.Models;
 
 namespace SysManageCRUD.Repository
 {
@@ -13,5 +14,7 @@ namespace SysManageCRUD.Repository
         Patient UpdatePatient(Patient patient);
 
         void DeletePatient(int id);
+
+        IEnumerable<SelectListItem> GetSelectListPatient();
     }
 }

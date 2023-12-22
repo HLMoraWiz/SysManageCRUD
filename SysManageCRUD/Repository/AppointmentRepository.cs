@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SysManageCRUD.Models;
 using System.Data;
 using System.Data.SqlClient;
@@ -67,11 +68,17 @@ namespace SysManageCRUD.Repository
 
             return appointments.Distinct().ToList();
         }
+
+       
         public Appointment UpdateAppointment(Appointment appointment)
         {
             var sql = "UPDATE Appointment SET Date=@Date,IdPatient=@IdPatient,IdLocation=@IdLocation,IdDoctor=@IdDoctor Where IdAppointment=@IdAppointment";
             _bd.Execute(sql, appointment);
             return appointment; 
         }
+
+
+
+
     }
 }

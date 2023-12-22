@@ -1,4 +1,5 @@
-﻿using SysManageCRUD.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SysManageCRUD.Models;
 
 namespace SysManageCRUD.Repository
 {
@@ -10,6 +11,8 @@ namespace SysManageCRUD.Repository
        Location CreateLocation(Location location); //Create a new location
        Location UpdateLocation(Location location); //Update a location
        void DeleteLocation(int idLocation); //Delete a location.
+
+        IEnumerable<SelectListItem> GetSelectListLocation();
 
     }
 }

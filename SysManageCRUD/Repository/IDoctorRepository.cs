@@ -1,4 +1,5 @@
-﻿using SysManageCRUD.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SysManageCRUD.Models;
 
 namespace SysManageCRUD.Repository
 {
@@ -9,7 +10,8 @@ namespace SysManageCRUD.Repository
         Doctor CreateDoctor(Doctor doctor);
         Doctor UpdateDoctor(Doctor doctor); 
         void DeleteDoctor(int id);
-        List<Doctor> GetSpecialtyDoctor(); 
+        List<Doctor> GetSpecialtyDoctor();
+        IEnumerable<SelectListItem> GetSelectListDoctor();
 
 
     }

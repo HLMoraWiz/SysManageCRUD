@@ -1,4 +1,5 @@
-﻿using SysManageCRUD.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SysManageCRUD.Models;
 
 namespace SysManageCRUD.Repository
 {
@@ -9,7 +10,8 @@ namespace SysManageCRUD.Repository
         Appointment CreateAppointment(Appointment appointment);
         Appointment UpdateAppointment(Appointment appointment);
         void DeleteAppointment(int id);
-        
-        //without relation
+      
+     
+     
     }
 }

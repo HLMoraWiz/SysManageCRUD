@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SysManageCRUD.Models;
 using System.Data;
 using System.Data.SqlClient;
@@ -46,6 +47,7 @@ namespace SysManageCRUD.Repository
 
         }
 
+    
         public List<Doctor> GetSpecialtyDoctor()
         {
             var sql = "SELECT a.*, c.SpecialtyName FROM Doctor a INNER JOIN Specialty c " +
@@ -66,5 +68,17 @@ namespace SysManageCRUD.Repository
             _bd.Execute(sql, doctor);
             return doctor;
         }
+
+        public IEnumerable<SelectListItem> GetSelectListDoctor()
+        {
+           
+                var sql = "SELECT * FROM doctor";
+                var lista = _bd.Query<Doctor>(sql).ToList();
+                SelectList listDoctor = new SelectList(lista, "IdDoctor", "DoctorName");
+
+                return listDoctor;
+            
+        }
+
     }
 }

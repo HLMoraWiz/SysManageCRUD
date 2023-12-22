@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SysManageCRUD.Models;
 using System.Data;
 using System.Data.SqlClient;
@@ -50,6 +51,16 @@ namespace SysManageCRUD.Repository
             var sql = "UPDATE Patient SET Name = @Name, LastName=@LastName,Age=@Age,Description=@Description Where IdPatient=@IdPatient";
             _bd.Execute(sql, patient);
             return patient; 
+        }
+
+
+        public IEnumerable<SelectListItem> GetSelectListPatient()
+        {
+            var sql = "SELECT * FROM patient";
+            var lista = _bd.Query<Patient>(sql).ToList();
+            SelectList listPatient = new SelectList(lista, "IdPatient", "PatientName");
+
+            return listPatient;
         }
     }
 }

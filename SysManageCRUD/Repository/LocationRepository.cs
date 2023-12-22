@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SysManageCRUD.Models;
 using System.Data;
 using System.Data.SqlClient;
@@ -47,6 +48,15 @@ namespace SysManageCRUD.Repository
             var sql = "UPDATE Location SET HospitalName = @HospitalName, Address=@Address  Where IdLocation=@IdLocation";
             _bd.Execute(sql, location);
             return location; 
+        }
+
+        public IEnumerable<SelectListItem> GetSelectListLocation()
+        {
+            var sql = "SELECT * FROM location";
+            var lista = _bd.Query<Location>(sql).ToList();
+            SelectList listLocation = new SelectList(lista, "IdLocation", "HospitalName");
+
+            return listLocation;
         }
     }
 }
