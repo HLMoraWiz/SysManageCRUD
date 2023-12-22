@@ -1,0 +1,52 @@
+﻿@model SysManageCRUD.Models.Appointment
+@{
+    ViewData["Title"] = "Edit Appointment";
+}
+<h1>Edit Appointment</h1>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8 mb-4">
+        <div class="card mb-4">
+            <div class="card-header py-3">
+                <h5 class="mb-0">Edit Appointment</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Edit">
+                    <input type="hidden" asp-for="IdAppointment" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Date" class="control-label"></label>
+                        <input asp-for="Date" class="form-control" type="date" placeholder="Select a date" />
+                        <span asp-validation-for="Date" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        @Html.DropDownList("IdPatient", (SelectList)ViewBag.SelectListPatient,
+                        "-Select a patient-", htmlAttributes: new { @class = "form-control" })
+                        <span asp-validation-for="IdPatient" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-3">
+                        @Html.DropDownList("IdDoctor", (SelectList)ViewBag.SelectListDoctor,
+                        "-Select a doctor-", htmlAttributes: new { @class = "form-control" })
+                        <span asp-validation-for="IdDoctor" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-3">
+                        @Html.DropDownList("IdLocation", (SelectList)ViewBag.SelectListLocation,
+                        "-Select a location-", htmlAttributes: new { @class = "form-control" })
+                        <span asp-validation-for="IdLocation" class="text-danger"></span>
+                    </div>
+
+                    <div class="form btn-group row mt-4">
+                        <div class="col-6">
+                            <input type="submit" value="Create Doctor" class="btn btn-primary form-control" />
+                        </div>
+
+                        <div class="col-6">
+                            <a asp-action="Index" class="btn btn-warning form-control">Back</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

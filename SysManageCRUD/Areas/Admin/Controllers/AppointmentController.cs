@@ -62,5 +62,46 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
             return View(appointment);
         }
+
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var appointment = _repoAppointment.GetAppointment(id.GetValueOrDefault());
+            if (appointment == null)
+            {
+                return NotFound();
+            }
+            ViewBag.SelectListLocation = _repoLocation.GetSelectListLocation();
+            ViewBag.SelectListDoctor = _repoDoctor.GetSelectListDoctor();
+            ViewBag.SelectListPatient = _repoPatient.GetSelectListPatient();
+
+            return View(appointment);
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit([Bind("IdAppointment", "Date", "IdDoctor,IdPatient,IdLocation")] Appointment appointment, int id)
+        {
+            if (id != appointment.IdAppointment)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                _repoAppointment.UpdateAppointment(appointment);
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Edit));
+        }
+
+
+
+
     }
 }
