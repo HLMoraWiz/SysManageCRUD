@@ -16,12 +16,12 @@ namespace SysManageCRUD.Repository
 
         public Doctor CreateDoctor(Doctor doctor)
         {
-            var sql = "INSERT INTO doctor(Name,SpecialtyId)" +
-                "VALUES(@Name,@SpecialtyId)";
+            var sql = "INSERT INTO doctor(DoctorName,SpecialtyId)" +
+                "VALUES(@DoctorName,@SpecialtyId)";
 
             _bd.Execute(sql, new
             {
-                doctor.Name,
+                doctor.DoctorName,
                 doctor.SpecialtyId
             }); 
 
@@ -62,7 +62,7 @@ namespace SysManageCRUD.Repository
 
         public Doctor UpdateDoctor(Doctor doctor)
         {
-            var sql = "UPDATE Doctor SET Name=@Name,SpecialtyId=@SpecialtyId Where IdDoctor=@IdDoctor";
+            var sql = "UPDATE Doctor SET DoctorName=@DoctorName,SpecialtyId=@SpecialtyId Where IdDoctor=@IdDoctor";
             _bd.Execute(sql, doctor);
             return doctor;
         }

@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\js\\Appointment.js",
+      "PackagePath": "staticwebassets\\js\\Appointment.js"
+    },
+    {
       "Id": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\js\\Doctors.js",
       "PackagePath": "staticwebassets\\js\\Doctors.js"
     },

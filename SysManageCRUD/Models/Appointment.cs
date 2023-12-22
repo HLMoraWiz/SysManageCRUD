@@ -10,6 +10,12 @@ namespace SysManageCRUD.Models
         public DateTime Date { get; set; }
         public int IdPatient { get; set; }
         public int IdLocation { get; set; }
+        public int IdDoctor { get; set; }
 
+        public virtual Location Location { get; set; }
+
+        public virtual Doctor Doctor { get; set; }  
+
+        public virtual Patient Patient { get; set; }
     }
 }

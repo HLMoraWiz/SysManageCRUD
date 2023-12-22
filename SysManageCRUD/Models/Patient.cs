@@ -9,7 +9,7 @@ namespace SysManageCRUD.Models
 
         [Required(ErrorMessage = "Patient name is required")]
         [StringLength(50, MinimumLength = 1, ErrorMessage = "field must be at least 6 characters")]
-        public string Name { get; set; }
+        public string PatientName { get; set; }
 
         [Required(ErrorMessage = "Patient lastname is required")]
         [StringLength(50, MinimumLength = 1, ErrorMessage = "field must be at least 6 characters")]
@@ -21,6 +21,8 @@ namespace SysManageCRUD.Models
         [Required(ErrorMessage = "Description is required")]
         [StringLength(50, MinimumLength = 6, ErrorMessage = "field must be at least 6 characters")]
         public string Description { get; set; }
+
+        public virtual Patient patient { get; set;}
 
     }
 }

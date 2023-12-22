@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Blitz\source\repos\SysManageCRUD\SysManageCRUD
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Blitz/source/repos/SysManageCRUD/SysManageCRUD/Areas/Admin/Views/Appointment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwb2ludG1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Blitz/source/repos/SysManageCRUD/SysManageCRUD/Areas/Admin/Views/Doctor/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9jdG9yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

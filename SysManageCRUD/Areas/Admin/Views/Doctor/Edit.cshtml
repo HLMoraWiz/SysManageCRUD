@@ -10,9 +10,9 @@
                 <input type="hidden" asp-for="IdDoctor" />
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="col-md-3">
-                    <label asp-for="Name" class="form-label"></label>
-                    <input asp-for="Name" type="text" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <label asp-for="DoctorName" class="form-label"></label>
+                    <input asp-for="DoctorName" type="text" class="form-control" />
+                    <span asp-validation-for="DoctorName" class="text-danger"></span>
                 </div>
                 <div class="form-group mt-3">
                     @Html.DropDownList("SpecialtyId", (SelectList)ViewBag.SelectList,

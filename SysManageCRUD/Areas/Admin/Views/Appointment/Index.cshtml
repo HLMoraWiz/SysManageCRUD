@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SysManageCRUD.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Appointment List";
+}
+
+<div class="row">
+    <div class="col-9">
+        <h1>Appointment Management</h1>
+    </div>
+    <div class="col-3">
+        <a asp-action="Create" class="btn btn-primary float-end"><i class="bi bi-plus-square"></i>Add Appointment</a>
+    </div>
+</div>
+<div class="card bg-light p-3">
+    <table class="table" id="tblAppointments">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+@section scripts{
+    <script src="~/js/appointment.js"></script>
+}

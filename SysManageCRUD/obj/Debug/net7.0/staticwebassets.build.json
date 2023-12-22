@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lh4Wgwpw5XbC8wh9y7QsNqlqUttN1pZCspiQbLkyuII=",
+  "Hash": "K+FgOFhhw5c4Adf0o6RUSDb+Ls3UBiJYYcaHFcqDVKk=",
   "Source": "SysManageCRUD",
   "BasePath": "_content/SysManageCRUD",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\js\\Appointment.js",
+      "SourceId": "SysManageCRUD",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\",
+      "BasePath": "_content/SysManageCRUD",
+      "RelativePath": "js/Appointment.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Appointment.js"
     },
     {
       "Identity": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\wwwroot\\js\\Doctors.js",

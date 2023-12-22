@@ -13,7 +13,7 @@ function cargarDatatable() {
         "columns": [
 
             { "data": "idDoctor", "width": "5%" },
-            { "data": "name", "width": "10%" },
+            { "data": "doctorName", "width": "10%" },
             { "data": "specialty.specialtyName", "width": "15%" },
 
             {

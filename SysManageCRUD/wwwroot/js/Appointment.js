@@ -4,38 +4,37 @@ $(document).ready(function () {
     cargarDatatable();
 });
 function cargarDatatable() {
-    datatable = $("#tblPatients").DataTable({
+    datatable = $("#tblAppointments").DataTable({
         "ajax": {
-            "url": "/admin/Patient/GetPatients",
+            "url": "/admin/appointment/GetAppointments",
             "type": "GET",
             "datatype": "json"
         },
-        "responsive": true,
         "columns": [
-            { "data": "idPatient","width": "5%" },
-            { "data": "patientName", "width": "20%" },
-            { "data": "lastName", "width": "20%" },
-            { "data": "age", "width": "20%" },
-            { "data": "description", "width": "20%" },
+
+            { "data": "idAppointment", "width": "5%" },
+            { "data": "patient.patientName", "width": "10%" },
+            { "data": "doctor.doctorName", "width": "10%" },
+            { "data": "location.hospitalName", "width": "10%" },
+            { "data": "date", "width": "10%" },
             {
-                "data": "idPatient",
+                "data": "idAppointment",
                 "render": function (data) {
-                    return `
-                      <div class="text-center">
-                        <a href="/admin/patient/edit/${data}" class="btn btn-success text-white" style="cursor:pointer; width:100%">
+                    return `<div class="text-center">
+                        <a href="/admin/appointment/edit/${data}" class="btn btn-success text-white" style="cursor:pointer; width:100px">
                          <i class="bi bi-pencil-square"></i> Edit
                         </a>
                         &nbsp;
-                        <a onclick=Delete("/admin/patient/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100%">
+                        <a onclick=Delete("/admin/appointment/delete/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100px">
                          <i class="bi bi-x-square"></i> Delete
                         </a>
-                      </div>`;
-                }
+                      </div>
+                      `;
+                }, "width": "50%"
             }
         ]
     });
 }
-
 function Delete(url) {
     Swal.fire({
         title: '¿Are you sure to delete this information?',
@@ -61,3 +60,7 @@ function Delete(url) {
         }
     });
 }
+
+
+
+
