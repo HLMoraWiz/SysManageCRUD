@@ -101,7 +101,23 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         }
 
 
+        [HttpDelete]
+        public IActionResult Delete(int? id)
+        {
 
+            if (id == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _repoAppointment.DeleteAppointment(id.GetValueOrDefault());
+                return Json(new { success = true, message = "Appointment deleted correctly" });
+
+            }
+
+
+        }
 
     }
 }
