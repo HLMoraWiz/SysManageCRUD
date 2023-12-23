@@ -47,6 +47,26 @@
                         </li>
 
                     </ul>
+                    @if(User.Identity.IsAuthenticated){
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <form class="form-check-inline" asp-area="Front" asp-controller="Access" asp-action="Exit">
+                                    <button type="submit" class="nav-link btn btn-link text-white"><i class="fas fa-sign-out-alt">Exit</i></button>
+                                </form>
+                            </li>
+                        </ul>
+                    }else{
+
+                        <ul class="navbar-nav mx-auto" >
+                            <li class="nav-item">
+                              <a class="nav-link text-white" asp-area="Front" asp-controller="Access" asp-action="Access">Access</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="Front" asp-controller="Access" asp-action="Register">Register</a>
+                            </li>
+                        </ul>
+                    }
                 </div>
             </div>
         </nav>
