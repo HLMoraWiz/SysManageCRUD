@@ -89,6 +89,12 @@ namespace SysManageCRUD.Areas.Front.Controllers
             }
         }
 
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+
         public IActionResult Index()
         {
             return View();
