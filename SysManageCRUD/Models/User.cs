@@ -7,10 +7,10 @@ namespace SysManageCRUD.Models
         [Key]
         public Guid User_ID { get; set; }
         [Required(ErrorMessage = "This field is required")]
-        [StringLength(20, ErrorMessage = "The {0} must be at least {2} & maximum {1} characters.  ", MinimumLength = 5)]
+        [StringLength(20, ErrorMessage = "The {0} must be at least {2} & maximum {1} characters.  ", MinimumLength = 2)]
         public string Login { get; set; }
         [Required(ErrorMessage = "This fiel is required")]
-        [StringLength(20, ErrorMessage = "The {0} must be at least {2} & maximum {1} characters. ", MinimumLength = 6)]
+        [StringLength(20, ErrorMessage = "The {0} must be at least {2} & maximum {1} characters. ", MinimumLength = 4)]
         public string Password { get; set; }
 
     }

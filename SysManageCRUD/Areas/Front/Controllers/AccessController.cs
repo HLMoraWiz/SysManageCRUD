@@ -22,7 +22,16 @@ namespace SysManageCRUD.Areas.Front.Controllers
             _bd = new SqlConnection(configuration.GetConnectionString("ConexionSQLServerDB"));
         }
 
+        [AllowAnonymous]
+        [HttpGet]
         public IActionResult Access()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Register()
         {
             return View();
         }
@@ -71,6 +80,66 @@ namespace SysManageCRUD.Areas.Front.Controllers
             }
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult UserRegister(User userLogin)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var sql = "SELECT * FROM [User] Where Login=@Login";
+
+                var userExist = _bd.Query<User>(sql, new
+                {
+                    userLogin.Login
+                });
+
+                if (userExist.Count() > 0)
+                {
+
+                    TempData["confirmationMessage"] = "The user already exists.";
+                    return RedirectToAction("Register", "Register");
+
+                }
+                else
+                {
+                    var Password = GetMD5(userLogin.Password);
+
+                    var User_ID = Guid.NewGuid();
+
+                    var enterUsuarioSQl = "INSERT into [User](User_ID,Login,Password)Values(@User_ID,@Login,@Password)";
+                    _bd.Execute(enterUsuarioSQl, new
+                    {
+                        User_ID,
+                        userLogin.Login,
+                        Password
+
+                    });
+
+                    var claims = new List<Claim>
+                    {
+
+                        new Claim(ClaimTypes.Name,userLogin.Login)
+                    };
+
+                    var claimsIdentity = new ClaimsIdentity(claims, "Login");
+                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+                    return RedirectToAction("Index", "Start");
+                }
+
+
+            }
+            else
+            {
+                TempData["confirmationMessage"] = "Some required fields are empty";
+                return RedirectToAction("Register", "Register");
+
+            }
+
+
+        }
+
+
         public static string GetMD5(string valor)
         {
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
@@ -89,10 +158,7 @@ namespace SysManageCRUD.Areas.Front.Controllers
             }
         }
 
-        public IActionResult Register()
-        {
-            return View();
-        }
+
 
 
         public IActionResult Index()
