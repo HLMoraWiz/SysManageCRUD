@@ -228,3 +228,5 @@ C:\Users\Blitz\source\repos\SysManageCRUD\SysManageCRUD\obj\Debug\net7.0\refint\
 C:\Users\Blitz\source\repos\SysManageCRUD\SysManageCRUD\obj\Debug\net7.0\SysManageCRUD.pdb
 C:\Users\Blitz\source\repos\SysManageCRUD\SysManageCRUD\obj\Debug\net7.0\SysManageCRUD.genruntimeconfig.cache
 C:\Users\Blitz\source\repos\SysManageCRUD\SysManageCRUD\obj\Debug\net7.0\ref\SysManageCRUD.dll
+C:\Users\Blitz\source\repos\SysManageCRUD\SysManageCRUD\bin\Debug\net7.0\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Blitz\source\repos\SysManageCRUD\SysManageCRUD\bin\Debug\net7.0\XAct.Core.PCL.dll

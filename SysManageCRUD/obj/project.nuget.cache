@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KCGG8mgRq3EkcefQZREO8Wja1TGXyyZDxzEFpL6S1gF/U6q9QQbKHk6gPBJ01frVPInTPf9sXsH3AyOOl5qWJA==",
+  "dgSpecHash": "YviBV28SfJ3hZt9HrEwplCOehi0HQpyON7kho/JKmWof2jtjOqZNmlEpTYQlD6ZB0HX0/SGi4DSnjydHf3z/VA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Blitz\\source\\repos\\SysManageCRUD\\SysManageCRUD\\SysManageCRUD.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Blitz\\.nuget\\packages\\commonservicelocator\\1.3.0\\commonservicelocator.1.3.0.nupkg.sha512",
     "C:\\Users\\Blitz\\.nuget\\packages\\dapper\\2.1.15\\dapper.2.1.15.nupkg.sha512",
     "C:\\Users\\Blitz\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Blitz\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -197,7 +198,29 @@
     "C:\\Users\\Blitz\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Blitz\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Blitz\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\Blitz\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\Blitz\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Blitz\\.nuget\\packages\\xact.core.pcl\\0.0.5014\\xact.core.pcl.0.0.5014.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'CommonServiceLocator 1.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "CommonServiceLocator",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'XAct.Core.PCL 0.0.5014' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "XAct.Core.PCL",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

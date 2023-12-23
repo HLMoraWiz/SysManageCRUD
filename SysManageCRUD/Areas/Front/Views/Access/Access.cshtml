@@ -1,0 +1,37 @@
+﻿@model SysManageCRUD.Models.User
+@{
+
+    ViewData["Title"] = "Access User"; 
+}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border rounded-lg">
+                <div class="card-body p-5">
+                    <h1 class="text-center text-secondary mb-4">WELCOME</h1>
+                    @if (TempData["messageconfirmation"] != null)
+                    {
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>@TempData["messageconfirmation"]</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                    <form asp-action="UserLogin" method="POST">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mt-3">
+                            <input asp-for="Login" class="form-control rounded-pill" placeholder="Enter user" />
+                            <span asp-validation-for="Login" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input asp-for="Password" type="password" class="form-control rounded-pill" placeholder="Enter password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-primary btn-block rounded-pill"><i class="bi bi-box-arrow-in-right"></i> Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
