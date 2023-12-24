@@ -19,6 +19,10 @@ The system provides a user-friendly and efficient interface for managing appoint
 - **HTML and CSS:** The structure and style of web pages.
 - **Bootstrap:** Design framework for a modern and responsive interface.
 
+## Database Diagram
+Below is the database diagram used in this project
+![Diagram](https://github.com/HLMoraWiz/SysManageCRUD/assets/119827170/6aeaec54-341f-4080-9e67-dbe8116debb3)
+
 ## System Requirements
 
 Make sure to have the following components installed before running the system:
