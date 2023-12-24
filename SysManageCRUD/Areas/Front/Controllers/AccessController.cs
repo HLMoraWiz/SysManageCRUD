@@ -12,6 +12,7 @@ using XSystem.Security.Cryptography;
 
 namespace SysManageCRUD.Areas.Front.Controllers
 {
+    [Authorize]
     [Area("Front")]
     public class AccessController : Controller
     {
@@ -44,7 +45,7 @@ namespace SysManageCRUD.Areas.Front.Controllers
         {
             if (ModelState.IsValid)
             {
-                var sql = "SELECT * FROM User Where Login=@Login AND Password=@Password";
+                var sql = "SELECT * FROM [User] Where Login=@Login AND Password=@Password";
                 var Password = GetMD5(user.Password);
                 var validate = _bd.Query<User>(sql, new
                 {
@@ -79,7 +80,7 @@ namespace SysManageCRUD.Areas.Front.Controllers
 
             }
         }
-
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult UserRegister(User userLogin)
@@ -139,7 +140,6 @@ namespace SysManageCRUD.Areas.Front.Controllers
 
         }
 
-
         public static string GetMD5(string valor)
         {
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
@@ -159,7 +159,13 @@ namespace SysManageCRUD.Areas.Front.Controllers
         }
 
 
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Exit()
+        {
+            HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Start");
+        }
 
         public IActionResult Index()
         {

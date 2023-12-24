@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SysManageCRUD.Models;
 using SysManageCRUD.Repository;
+using XAct.Security;
 
 namespace SysManageCRUD.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class DoctorController : Controller
     {
