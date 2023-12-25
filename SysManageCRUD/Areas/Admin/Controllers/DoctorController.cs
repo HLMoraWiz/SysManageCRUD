@@ -39,7 +39,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-       public ActionResult Create([Bind("IdDoctor","Name", "SpecialtyId")]Doctor doctor)
+       public ActionResult Create([Bind("IdDoctor", "DoctorName", "SpecialtyId")]Doctor doctor)
         {
             if (ModelState.IsValid)
             {

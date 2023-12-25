@@ -59,5 +59,14 @@ namespace SysManageCRUD.Repository
 
             return listSpecialty;
         }
+
+        public bool SpecialtyExists(string specialtyName)
+        {
+            var sql = "SELECT COUNT(*) FROM Specialty WHERE SpecialtyName = @SpecialtyName";
+            var count = _bd.QueryFirstOrDefault<int>(sql, new { SpecialtyName = specialtyName });
+            return count > 0;
+        }
+
+
     }
 }

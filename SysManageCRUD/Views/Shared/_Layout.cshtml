@@ -26,28 +26,37 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="Admin" asp-controller="Specialty" asp-action="Index"><i class="bi bi-bookmark-check-fill"></i>specialty</a>
-                        </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="admin" asp-controller="Patient" asp-action="Index"> <i class="bi bi-person-fill"></i>Patients</a>
+                            <a class="nav-link text-white" asp-area="Front" asp-controller="Start" asp-action="Index">Start</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="admin" asp-controller="Doctor" asp-action="Index"> <i class="bi bi-person-badge-fill"></i>Doctor</a>
-                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="admin" asp-controller="Location" asp-action="Index"><i class="bi bi-geo-fill"></i>Location</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="Admin" asp-controller="Specialty" asp-action="Index"><i class="bi bi-bookmark-check-fill"></i>specialty</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="admin" asp-controller="Appointment" asp-action="Index"><i class="bi bi-calendar2-event-fill"></i>Appointments</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="admin" asp-controller="Patient" asp-action="Index"> <i class="bi bi-person-fill"></i>Patients</a>
+                            </li>
 
-                    </ul>
-                    @if(User.Identity.IsAuthenticated){
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="admin" asp-controller="Doctor" asp-action="Index"> <i class="bi bi-person-badge-fill"></i>Doctor</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="admin" asp-controller="Location" asp-action="Index"><i class="bi bi-geo-fill"></i>Location</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="admin" asp-controller="Appointment" asp-action="Index"><i class="bi bi-calendar2-event-fill"></i>Appointments</a>
+                            </li>
+                        }
+
+                        </ul>
+                        @if(User.Identity.IsAuthenticated){
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
                                 <form class="form-check-inline" asp-area="Front" asp-controller="Access" asp-action="Exit">

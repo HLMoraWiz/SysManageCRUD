@@ -38,7 +38,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([Bind("IdPatient,Name,LastName,Age,Description")]Patient patient)
+        public IActionResult Create([Bind("IdPatient,PatientName,LastName,Age,Description")]Patient patient)
         {
             if (ModelState.IsValid)
             {

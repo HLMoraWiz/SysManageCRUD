@@ -11,6 +11,8 @@ namespace SysManageCRUD.Repository
         void DeleteSpecialty(int id);
         Specialty CreateSpecialty(Specialty specialty);
 
+        bool SpecialtyExists(string specialtyName); 
+
         //..
         IEnumerable<SelectListItem> GetSelectListSpecialty();
 

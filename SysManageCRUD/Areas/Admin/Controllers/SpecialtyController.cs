@@ -41,8 +41,16 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create([Bind("IdSpecialty,SpecialtyName")] Specialty specialty) {
 
+            var id1 = specialty.IdSpecialty; 
+
+
             if (ModelState.IsValid)
             {
+                if (_repoSpecialty.SpecialtyExists(specialty.SpecialtyName))
+                {
+                    ModelState.AddModelError("SpecialtyName", "Esta especialidad ya existe.");
+                    return View(specialty);
+                }
                 _repoSpecialty.CreateSpecialty(specialty);
                 return RedirectToAction("Index");
             }
