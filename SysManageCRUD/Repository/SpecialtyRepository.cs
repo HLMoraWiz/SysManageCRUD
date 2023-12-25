@@ -68,5 +68,15 @@ namespace SysManageCRUD.Repository
         }
 
 
+        //new 
+
+        public bool SpecialtyHasDoctors(int id)
+        {
+            var sql = "SELECT COUNT(*) FROM Doctor WHERE SpecialtyId = @SpecialtyId";
+            var count = _bd.QueryFirstOrDefault<int>(sql, new { SpecialtyId = id });
+            return count > 0;
+        }
+
+
     }
 }

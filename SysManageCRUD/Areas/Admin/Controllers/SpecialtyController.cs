@@ -100,6 +100,11 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             }
             else
             {
+                if (_repoSpecialty.SpecialtyHasDoctors(id.GetValueOrDefault()))
+                {
+                    return Json(new { success = false, message = "Unable to delete. Specialty is associated with one or more doctors." });
+                }
+
                 _repoSpecialty.DeleteSpecialty(id.GetValueOrDefault());
                 return Json(new { success = true, message = "Specialty has been deleted correctly" });
             }
