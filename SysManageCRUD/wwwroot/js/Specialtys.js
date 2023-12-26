@@ -2,9 +2,16 @@
 
 $(document).ready(function () {
     cargarDatatable();
+    
 });
 function cargarDatatable() {
     datatable = $("#tblSpecialtys").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy','csv','excel','pdf','print'
+
+
+        ],
         "ajax": {
             "url": "/admin/Specialty/GetSpecialtys",
             "type": "GET",
@@ -12,8 +19,8 @@ function cargarDatatable() {
         },
         "responsive": true,
         "columns": [
-            { "data": "idSpecialty","width": "10%" },
-            { "data": "specialtyName", "width": "15%" },
+            { "data": "idSpecialty","width": "50%" },
+            { "data": "specialtyName", "width": "50%" },
             {
                 "data": "idSpecialty",
                 "render": function (data) {
