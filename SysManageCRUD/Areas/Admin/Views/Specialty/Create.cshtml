@@ -11,12 +11,12 @@
     <form asp-action="Create">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <input asp-for="SpecialtyName"  placeholder="Enter the name of the Specialty" />
+            <input asp-for="SpecialtyName" placeholder="Enter the name of the Specialty" class="form-control  />
             <span asp-validation-for="SpecialtyName" class="text-danger"></span>
         </div>
         <div class="form btn-group row mt-4">
             <div class="col-6">
-                <input type="submit" value="Create Specialty" class="btn btn-primary" />
+                <input type="submit" value="Create Specialty" class="btn btn-primary"  />
             </div>
             <div class="col-6">
                 <a asp-action="Index" class="btn btn-warning">Back to list</a>

@@ -48,7 +48,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             {
                 if (_repoSpecialty.SpecialtyExists(specialty.SpecialtyName))
                 {
-                    ModelState.AddModelError("SpecialtyName", "Esta especialidad ya existe.");
+                    ModelState.AddModelError("SpecialtyName", "This specialty already exists.");
                     return View(specialty);
                 }
                 _repoSpecialty.CreateSpecialty(specialty);
@@ -84,6 +84,11 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
+                if (_repoSpecialty.SpecialtyExists(specialty.SpecialtyName))
+                {
+                    ModelState.AddModelError("SpecialtyName", "This specialty already exists.");
+                    return View(specialty);
+                }
                 _repoSpecialty.UpdateSpecialty(specialty);
                 return RedirectToAction("Index");
             }
