@@ -76,26 +76,49 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit([Bind("IdSpecialty,SpecialtyName")] Specialty specialty, int id)
         {
-
-            if (id!=specialty.IdSpecialty)
+          
+            if (id != specialty.IdSpecialty)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            
+            if (string.IsNullOrWhiteSpace(specialty.SpecialtyName))
             {
-                if (_repoSpecialty.SpecialtyExists(specialty.SpecialtyName))
+                ModelState.AddModelError("SpecialtyName", "The specialty name is required.");
+                return View(specialty);
+            }
+
+            
+            var existingSpecialty = _repoSpecialty.GetSpecialty(id);
+
+           
+            if (existingSpecialty.SpecialtyName != specialty.SpecialtyName)
+            {
+            
+                if (ModelState.IsValid)
                 {
-                    ModelState.AddModelError("SpecialtyName", "This specialty already exists.");
-                    return View(specialty);
+                    if (_repoSpecialty.SpecialtyExists(specialty.SpecialtyName))
+                    {
+                        ModelState.AddModelError("SpecialtyName", "This specialty already exists.");
+                        return View(specialty);
+                    }
+
+                  
+                    _repoSpecialty.UpdateSpecialty(specialty);
+                    return RedirectToAction("Index");
                 }
+            }
+            else
+            {
+                
                 _repoSpecialty.UpdateSpecialty(specialty);
                 return RedirectToAction("Index");
             }
 
+          
             return View(specialty);
         }
-
         [HttpDelete]
         public IActionResult Delete(int? id)
         {
