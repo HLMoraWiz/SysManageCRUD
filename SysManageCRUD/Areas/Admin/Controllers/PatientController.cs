@@ -74,8 +74,6 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
         public IActionResult Edit([Bind("IdPatient,Name,LastName,Age,Description")]Patient patient, int id)
         {
-            if (id!= patient.IdPatient)
-            {
                 return NotFound(); 
             }
 
