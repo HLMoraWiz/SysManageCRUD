@@ -22,6 +22,9 @@ namespace SysManageCRUD.Models
         [StringLength(50, MinimumLength = 6, ErrorMessage = "field must be at least 6 characters")]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = "The IdCard field is required.")]
+        [RegularExpression("^[0-9]{9}$", ErrorMessage = "The IdCard field must contain exactly 9 digits and only numeric characters.")]
+        public string IdCard { get; set; }
         public virtual Patient patient { get; set;}
 
     }

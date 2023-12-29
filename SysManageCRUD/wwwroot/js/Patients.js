@@ -12,11 +12,12 @@ function cargarDatatable() {
         },
         "responsive": true,
         "columns": [
-            { "data": "idPatient","width": "5%" },
+            { "data": "idPatient", "width": "5%" },
+            { "data": "idCard", "width": "20%" },
             { "data": "patientName", "width": "20%" },
             { "data": "lastName", "width": "20%" },
             { "data": "age", "width": "20%" },
-            { "data": "description", "width": "20%" },
+          
             {
                 "data": "idPatient",
                 "render": function (data) {

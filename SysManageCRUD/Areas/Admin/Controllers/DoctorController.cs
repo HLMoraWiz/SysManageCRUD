@@ -73,7 +73,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit([Bind("IdDoctor","Name", "SpecialtyId")] Doctor doctor, int id)
+        public IActionResult Edit([Bind("IdDoctor", "DoctorName", "SpecialtyId")] Doctor doctor, int id)
         {
             if (id!=doctor.IdDoctor)
             {

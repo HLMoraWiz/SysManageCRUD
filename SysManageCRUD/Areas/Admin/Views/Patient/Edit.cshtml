@@ -25,6 +25,12 @@
                     <span asp-validation-for="Age" class="text-danger"></span>
                 </div>
 
+                <div class="col-md-3">
+                    <label asp-for="IdCard" class="form-label"></label>
+                    <input asp-for="IdCard" type="text" class="form-control" />
+                    <span asp-validation-for="IdCard" class="text-danger"></span>
+                </div>
+
                 <div class="col-md-8">
                     <label asp-for="Description" class="form-label"></label>
                     <textarea asp-for="Description"  class="form-control" rows="10" cols="125"></textarea>

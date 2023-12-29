@@ -64,9 +64,13 @@ namespace SysManageCRUD.Repository
 
         public Doctor UpdateDoctor(Doctor doctor)
         {
-            var sql = "UPDATE Doctor SET DoctorName=@DoctorName,SpecialtyId=@SpecialtyId Where IdDoctor=@IdDoctor";
-            _bd.Execute(sql, doctor);
-            return doctor;
+        
+                var sql = "UPDATE Doctor SET DoctorName=@DoctorName, SpecialtyId=@SpecialtyId WHERE IdDoctor=@IdDoctor";
+                _bd.Execute(sql, doctor);
+              
+              
+                return doctor;
+          
         }
 
         public IEnumerable<SelectListItem> GetSelectListDoctor()

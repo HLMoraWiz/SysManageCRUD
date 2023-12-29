@@ -15,10 +15,11 @@ namespace SysManageCRUD.Repository
         }
         public Patient CreatePatient(Patient patient)
         {
-            var sql = "INSERT INTO Patient(PatientName,LastName,Age,Description)Values(@PatientName,@LastName,@Age,@Description)";
+            var sql = "INSERT INTO Patient(PatientName,LastName,IdCard,Age,Description)Values(@PatientName,@LastName,@IdCard,@Age,@Description)";
             _bd.Execute(sql, new
             {
                 patient.PatientName,
+                patient.IdCard,
                 patient.LastName,
                 patient.Age,
                 patient.Description
@@ -48,7 +49,7 @@ namespace SysManageCRUD.Repository
 
         public Patient UpdatePatient(Patient patient)
         {
-            var sql = "UPDATE Patient SET Name = @Name, LastName=@LastName,Age=@Age,Description=@Description Where IdPatient=@IdPatient";
+            var sql = "UPDATE Patient SET PatientName =@PatientName, LastName=@LastName,IdCard=@IdCard,Age=@Age,Description=@Description Where IdPatient=@IdPatient";
             _bd.Execute(sql, patient);
             return patient; 
         }

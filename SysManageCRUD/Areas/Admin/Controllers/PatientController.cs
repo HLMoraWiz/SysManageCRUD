@@ -38,7 +38,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([Bind("IdPatient,PatientName,LastName,Age,Description")]Patient patient)
+        public IActionResult Create([Bind("IdPatient,PatientName,LastName,IdCard,Age,Description")]Patient patient)
         {
             if (ModelState.IsValid)
             {
@@ -52,8 +52,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         }
 
 
-        [HttpGet]
-
+        [HttpGet] 
         public IActionResult Edit(int?id)
         {
             if (id==null)
@@ -71,19 +70,22 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         }
 
         [HttpPost]
-
-        public IActionResult Edit([Bind("IdPatient,Name,LastName,Age,Description")]Patient patient, int id)
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit([Bind("IdPatient,PatientName,LastName,IdCard,Age,Description")]Patient gpatient, int id)
         {
-                return NotFound(); 
+
+            if (id!=gpatient.IdPatient)
+            {
+                return NotFound();
             }
 
-            if (ModelState.IsValid) { 
-            
-              _repoPatient.UpdatePatient(patient);
-              return RedirectToAction(nameof(Index));
+            if (ModelState.IsValid)
+            {
+                _repoPatient.UpdatePatient(gpatient);
+                return RedirectToAction(nameof(Index));
             }
 
-            return View(patient);
+            return RedirectToAction(nameof(Index)); 
         }
 
 
