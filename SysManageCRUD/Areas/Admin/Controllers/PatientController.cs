@@ -76,19 +76,45 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit([Bind("IdPatient,PatientName,LastName,IdCard,Age,Description")]Patient gpatient, int id)
+        public IActionResult Edit([Bind("IdPatient,PatientName,LastName,IdCard,Age,Description")]Patient patient, int id)
         {
 
-            if (id!=gpatient.IdPatient)
+            if (id!=patient.IdPatient)
             {
-                return NotFound();
+                return NotFound(); 
+            }
+            if (string.IsNullOrWhiteSpace(patient.IdCard))
+            {
+                ModelState.AddModelError("IdCard", "This patient already exists");
+                return View(patient);   
             }
 
-            if (ModelState.IsValid)
+            var existingPatient = _repoPatient.GetPatient(id);
+
+            if (existingPatient.IdCard != patient.IdCard)
             {
-                _repoPatient.UpdatePatient(gpatient);
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    if (_repoPatient.PatientExists(patient.IdCard))
+                    {
+
+                        ModelState.AddModelError("IdCard", "This patient already exists.");
+                        return View(patient);
+                    }
+
+
+                    _repoPatient.UpdatePatient(patient);
+                    return RedirectToAction("Index");
+                }
+
             }
+            else
+            {
+
+                _repoPatient.UpdatePatient(patient);
+                return RedirectToAction("Index");
+            }
+
 
             return RedirectToAction(nameof(Index)); 
         }
