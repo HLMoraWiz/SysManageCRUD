@@ -63,5 +63,12 @@ namespace SysManageCRUD.Repository
 
             return listPatient;
         }
+
+        public bool PatientExists(string IdCard)
+        {
+            var sql = "SELECT COUNT(*) FROM Patient WHERE IdCard = @IdCard";
+            var count = _bd.QueryFirstOrDefault<int>(sql, new { IdCard = IdCard });
+            return count > 0;
+        }
     }
 }
