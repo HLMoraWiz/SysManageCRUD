@@ -15,6 +15,8 @@ namespace SysManageCRUD.Repository
 
         void DeletePatient(int id);
 
+        bool PatientExists(string IdCard);
+
         IEnumerable<SelectListItem> GetSelectListPatient();
     }
 }
