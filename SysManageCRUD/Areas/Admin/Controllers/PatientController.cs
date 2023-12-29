@@ -42,6 +42,11 @@ namespace SysManageCRUD.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (_repoPatient.PatientExists(patient.IdCard?.ToString()))
+                {
+                    ModelState.AddModelError("IdCard", "This patient already exists"); 
+                    return View(patient);
+                }
 
                 _repoPatient.CreatePatient(patient);
                 return RedirectToAction(nameof(Index)); 
