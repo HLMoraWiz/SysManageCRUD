@@ -17,6 +17,8 @@ namespace SysManageCRUD.Repository
 
         bool PatientExists(string IdCard);
 
+        bool PatientyHasAppointment(int id);
+
         IEnumerable<SelectListItem> GetSelectListPatient();
     }
 }

@@ -70,5 +70,14 @@ namespace SysManageCRUD.Repository
             var count = _bd.QueryFirstOrDefault<int>(sql, new { IdCard = idCard });
             return count > 0;
         }
+
+        public bool PatientyHasAppointment(int id)
+        {
+           
+                var sql = "SELECT COUNT(*) FROM Appointment WHERE IdPatient = @IdPatient";
+                var count = _bd.QueryFirstOrDefault<int>(sql, new { IdPatient = id });
+                return count > 0;
+            
+        }
     }
 }

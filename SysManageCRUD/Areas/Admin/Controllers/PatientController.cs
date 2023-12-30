@@ -130,6 +130,10 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             }
             else
             {
+                if (_repoPatient.PatientyHasAppointment(id.GetValueOrDefault()))
+                {
+                    return Json(new { success = false, message = "Unable to delete. Patient is associated with one appointment" });
+                }
                 _repoPatient.DeletePatient(id.GetValueOrDefault());
                 return Json(new {success = true, message= "Patient has been deleted correctly" });
             }
