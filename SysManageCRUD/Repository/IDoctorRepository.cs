@@ -11,6 +11,7 @@ namespace SysManageCRUD.Repository
         Doctor UpdateDoctor(Doctor doctor); 
         void DeleteDoctor(int id);
         List<Doctor> GetSpecialtyDoctor();
+        bool DoctorHasAppointment(int id);
         IEnumerable<SelectListItem> GetSelectListDoctor();
 
 
