@@ -96,6 +96,12 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             }
             else
             {
+                if(_RepoDoctor.DoctorHasAppointment(id.GetValueOrDefault()))
+                {
+                    return Json(new { success = false, message = "Unable to delete. Doctor is associated with one appointment" });
+
+                }
+
                 _RepoDoctor.DeleteDoctor(id.GetValueOrDefault());
                 return Json(new {success = true,message="Doctor deleted correctly" });
 
