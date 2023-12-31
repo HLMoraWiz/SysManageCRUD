@@ -73,6 +73,8 @@ namespace SysManageCRUD.Repository
           
         }
 
+
+
         public IEnumerable<SelectListItem> GetSelectListDoctor()
         {
            
@@ -84,5 +86,13 @@ namespace SysManageCRUD.Repository
             
         }
 
+        public bool DoctorHasAppointment(int id)
+        {
+
+            var sql = "SELECT COUNT(*) FROM Appointment WHERE IdDoctor = @IdDoctor";
+            var count = _bd.QueryFirstOrDefault<int>(sql, new { IdDoctor = id });
+            return count > 0;
+
+        }
     }
 }
