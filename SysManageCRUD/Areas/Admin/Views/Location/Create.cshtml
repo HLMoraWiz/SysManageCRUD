@@ -1,0 +1,35 @@
+﻿@model SysManageCRUD.Models.Location
+
+@{
+    ViewData["Title"] = "Create Location";
+}
+
+<div class="row bg-light border p-4">
+    <div class="col-4 offset-4"></div>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <input asp-for="HospitalName" placeholder="Enter the name of the Hospital" class="form-control   />
+            <span asp-validation-for="HospitalName" class="text-danger"></span>
+        </div>
+        <div class="form-group  mt-3">
+            <textarea asp-for="Address" placeholder="Enter the address of the Hospital" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="form btn-group row mt-4">
+            <div class="col-6">
+                <input type="submit" value="Create Location" class="btn btn-primary" />
+            </div>
+            <div class="col-6">
+                <a asp-action="Index" class="btn btn-warning">Back to list</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
