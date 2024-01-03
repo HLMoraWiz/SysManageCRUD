@@ -54,6 +54,24 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
         }
 
+        [HttpGet]   
+        public IActionResult Edit(int?id)
+        {
+            if (id==null)
+            {
+                return NotFound(); 
+
+            }
+
+            var location = _repolocation.GetLocation(id.GetValueOrDefault());
+            if (location==null)
+            {
+                return NotFound();
+            }
+
+            return View(location); 
+        }
+
 
     }
 }
