@@ -13,7 +13,7 @@ namespace SysManageCRUD.Repository
         {
             _bd = new SqlConnection(configuration.GetConnectionString("ConexionSQLServerDB")); 
         }
-        public Location CreateLocation(Location location)
+        public LocationHpt CreateLocation(LocationHpt location)
         {
             var sql = "INSERT INTO Location(HospitalName,Address)Values(@HospitalName,@Address)";
             _bd.Execute(sql, new
@@ -31,19 +31,19 @@ namespace SysManageCRUD.Repository
             _bd.Execute(sql, new { idLocation = id }); 
         }
 
-        public Location GetLocation(int id)
+        public LocationHpt GetLocation(int id)
         {
             var sql = "SELECT * FROM Location where IdLocation=@IdLocation"; 
-            return _bd.Query<Location>(sql, new { IdLocation = id }).Single();
+            return _bd.Query<LocationHpt>(sql, new { IdLocation = id }).Single();
         }
 
-        public List<Location> GetLocations()
+        public List<LocationHpt> GetLocations()
         {
             var sql = "SELECT * FROM Location"; 
-            return _bd­.Query<Location>(sql).ToList();    
+            return _bd­.Query<LocationHpt>(sql).ToList();    
         }
 
-        public Location UpdateLocation(Location location)
+        public LocationHpt UpdateLocation(LocationHpt location)
         {
             var sql = "UPDATE Location SET HospitalName = @HospitalName, Address=@Address  Where IdLocation=@IdLocation";
             _bd.Execute(sql, location);
@@ -53,7 +53,7 @@ namespace SysManageCRUD.Repository
         public IEnumerable<SelectListItem> GetSelectListLocation()
         {
             var sql = "SELECT * FROM location";
-            var lista = _bd.Query<Location>(sql).ToList();
+            var lista = _bd.Query<LocationHpt>(sql).ToList();
             SelectList listLocation = new SelectList(lista, "IdLocation", "HospitalName");
 
             return listLocation;

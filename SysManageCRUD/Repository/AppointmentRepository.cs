@@ -54,7 +54,7 @@ namespace SysManageCRUD.Repository
 			INNER JOIN Patient pt ON Pt.IdPatient = p.IdPatient
 			ORDER BY p.IdAppointment DESC";
 
-            var appointments = _bd.Query<Appointment, Patient, Location, Doctor, Appointment>(
+            var appointments = _bd.Query<Appointment, Patient, LocationHpt, Doctor, Appointment>(
                 sql,
                 (appointment, patient, location, doctor) =>
                 {

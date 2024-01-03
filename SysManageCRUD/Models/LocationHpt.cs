@@ -2,7 +2,7 @@
 
 namespace SysManageCRUD.Models
 {
-    public class Location
+    public class LocationHpt
     {
         [Key]
         public int IdLocation { get; set; }

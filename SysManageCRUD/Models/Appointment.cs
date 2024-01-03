@@ -12,7 +12,7 @@ namespace SysManageCRUD.Models
         public int IdLocation { get; set; }
         public int IdDoctor { get; set; }
 
-        public virtual Location Location { get; set; }
+        public virtual LocationHpt Location { get; set; }
 
         public virtual Doctor Doctor { get; set; }  
 
