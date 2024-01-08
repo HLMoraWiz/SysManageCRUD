@@ -41,7 +41,7 @@ namespace SysManageCRUD.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("HospitalName","Address")]LocationHpt location) {
+        public IActionResult Create([Bind("IdLocation","HospitalName","Address")]LocationHpt location) {
 
             if (ModelState.IsValid)
             {
@@ -72,6 +72,24 @@ namespace SysManageCRUD.Areas.Admin.Controllers
             return View(location); 
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit([Bind("IdLocation", "HospitalName","Address")]LocationHpt location,int id)
+        {
+            if (id!=location.IdLocation)
+            {
+                return NotFound(); 
+            }
+
+            if (ModelState.IsValid)
+            {
+                _repolocation.UpdateLocation(location);
+                return RedirectToAction(nameof(Index)); 
+            }
+
+            return RedirectToAction(nameof(Edit));
+        }
 
     }
 }
